@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+
+</head>
+
+<body>
+
+    <main>
+
+        <div id="quiz-start-screen">
+            <div class="set_bts cent">
+                <button href="#quiz_page" class="quiz-start-btn" id="st1" onclick="show_1()">SET 1<br>About
+                    Beiersdorf</button>
+                <button class="quiz-start-btn" id="st2" onclick="show_2()">SET 2<br>Questions on Quality</button>
+            </div>
+        </div>
+
+
+        <div id="quiz_page">
+            <div id="pg_bar"></div>
+
+            <div class="wrapper">
+                <div class="title">
+                    <h2>Question <span id="que_hd"></span></h2>
+                </div>
+                <div class="quiz-container">
+                    <h4 id="question">Question Text</h4>
+                    <img src="" id="que-img" />
+                    <ul class="answers">
+
+                        <button type="button" class="hello hover block" onclick="submitAnswer()"><input type="radio"
+                                class="answer " id="a" name="answer1" value="a">
+                            &nbsp&nbsp
+                            <label for="a" id="a_answer">Answer</label></button>
+                        <button type="button" class="hello hover" onclick="submitAnswer()"><input type="radio"
+                                class="answer " id="b" name="answer2" value="b">
+                            &nbsp&nbsp
+                            <label for="b" id="b_answer">Answer</label> </button>
+                        <button type="button" class=" hello hover" onclick="submitAnswer()"><input type="radio"
+                                class="answer " id="c" name="answer3" value="c">
+                            &nbsp&nbsp
+                            <label for="c" id="c_answer">Answer</label> </button>
+                        <button type="button" class="hello hover" onclick="submitAnswer()"><input type="radio"
+                                class="answer " id="d" name="answer4" value="d">
+                            &nbsp&nbsp
+                            <label for="d" id="d_answer">Answer</label> </button>
+
+                    </ul>
+
+                    <div id="demo"></div>
+                    <button class="btn-next" id="next" onclick="nextQuiz()">Next</button>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div id="quiz-end-screen">
+            <h1 id="main_hd2">TRIVIA QUIZ</h1>
+            <div class='wrapper'>
+                <div id="col-flex">
+                    <h2>Your Total Score Result</h2>
+                    <div id="ds_score"></div>
+                </div>
+                <button class="button-end btn" onclick="reload()">Submit Score</button>
+            </div>
+
+        </div>
+    </main>
+
+
+    <script src="main.js"></script>
+    <script>
+        document.getElementById("st1").onclick = function () { show_1() };
+        document.getElementById("st2").onclick = function () { show_2() };
+
+
+        function show_1() {
+            document.getElementById('quiz_page').style.display = "block";
+            document.getElementById('quiz-start-screen').style.display = "none";
+
+            yy = 0;
+            document.body.style.backgroundImage = "url('./images/bck.jpg')";
+            quizLoad();
+
+        }
+
+        function show_2() {
+
+            document.getElementById('quiz_page').style.display = "block";
+            //document.getElementById("logo").src = "pic.png";
+            //document.getElementById("logo").style.height = "60px"
+            document.getElementById('quiz-start-screen').style.display = "none";
+
+            yy = 1;
+
+           
+
+            quizLoad();
+        }
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
